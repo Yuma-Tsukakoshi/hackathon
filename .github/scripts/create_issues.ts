@@ -9,7 +9,7 @@ const api_url = "https://api.github.com";
 
 // リポジトリの所有者とリポジトリ名
 const owner = "Yuma-Tsukakoshi";
-const repo = "miniHackathon-template";
+const repo = "hackathon";
 
 // GitHubのパーソナルアクセストークン
 dotenv.config();
