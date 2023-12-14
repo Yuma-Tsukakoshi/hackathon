@@ -1,0 +1,19 @@
+name: Add To GitHub projects
+on:
+  workflow_run:
+    workflows: ["Create Issues from Markdown Templates"]
+    types:
+      - completed
+env:
+  GITHUB_TOKEN: ${{ secrets.TOKEN }}
+jobs:
+  add-to-project:
+    name: Add issue to project
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v0.3.0
+        with:
+          # https://github.com/orgs|users/<ownerName>/projects/<projectNumber>
+          project-url: https://github.com/users/Yuma-Tsukakoshi/projects/28
+          # repo and projectのtokenが必要
+          github-token: ${{ env.GITHUB_TOKEN }}
